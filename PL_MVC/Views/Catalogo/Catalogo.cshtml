@@ -1,0 +1,78 @@
+﻿@model ML.Area
+@{
+    ViewBag.Title = "Catalogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Multiple Item Product Carousel</title>
+    <link rel="stylesheet" href="~/Content/Styles/CatalogoArea.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $(".wish-icon i").click(function () {
+                $(this).toggleClass("fa-heart fa-heart-o");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Lista de  <b>Areas</b></h2>
+                
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                          
+
+                            <div class="row">
+                                @foreach (ML.Area area in Model.Areas)
+                                {
+
+                                    <div class="col-sm-3">
+                                        <br />
+                                        <div class="thumb-wrapper">
+                                            <div class="thumb-content">
+                                                <h4>@area.Nombre</h4>
+
+
+                                                <a href="@Url.Action("GetProductos", "Catalogo", new {idArea = area.IdArea})" class="btn btn-primary">Ver Productos</a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                }
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+                
+             
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8cef4b5d10964f338418d8ba7ff52174" Name="Diagram1">
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Rol" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Usuario" Width="1.5" PointX="3" PointY="6.75" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Usuario__IdRol__1920BF5C" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Colonia" Width="1.5" PointX="10.125" PointY="1.125" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Direccion" Width="1.5" PointX="12.375" PointY="4.625" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Estado" Width="1.5" PointX="5.625" PointY="1.25" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Municipio" Width="1.5" PointX="7.875" PointY="1.25" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Pai" Width="1.5" PointX="3.375" PointY="1.375" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Colonia__IdMunic__412EB0B6" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Direccion__IdCol__440B1D61" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Direccion__IdUsu__44FF419A" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Estado__IdPais__3B75D760" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Municipio__IdEst__3E52440B" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Area" Width="1.5" PointX="5.375" PointY="5" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Departamento" Width="1.5" PointX="7.625" PointY="4.875" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Departame__IdAre__5EBF139D" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Producto" Width="1.5" PointX="9.875" PointY="4.375" />
+        <EntityTypeShape EntityType="LBastidaProgramacionNCapasModel.Proveedor" Width="1.5" PointX="7.625" PointY="8.125" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Producto__IdDepa__6FE99F9F" />
+        <AssociationConnector Association="LBastidaProgramacionNCapasModel.FK__Producto__IdProv__6EF57B66" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

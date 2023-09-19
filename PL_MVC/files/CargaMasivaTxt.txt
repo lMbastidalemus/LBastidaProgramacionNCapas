@@ -1,0 +1,5 @@
+IdRol|UserName|Nombre|ApellidoPaterno|ApellidoMaterno|Email|Password|Sexo|Telefono|Celular|FechaNacimiento|CURP|Calle|NumeroInterior|NumeroExterior|IdColonia|Imagen
+1|Usuario1|luis1|bastida1|lemus1|lemu4@gmail.com|12345|H|5566223344|6633445522|02/02/2000|BALL000917HMCSMSA7|Sur2|23|21|1|null
+2|Usuario2|luis2|bastida2|lemus2|lemu5@gmail.com|12345|H|5566223344|6633445522|02/02/2000|BALL000917HMCSMSA7|Sur2|23|21|1|null
+2|Usuario3|luis3|bastida3|lemus3|lemu6@gmail.com|12345|H|5566223344|6633445522|02/02/2000|BALL000917HMCSMSA7|Sur2|23|21|1|null
+5|Usuario4|luis4|bastida4|lemus4|lemu7@gmail.com|12345|H|5566223344|6633445522|02/02/2000|BALL000917HMCSMSA7|Sur2|23|21|1|null
