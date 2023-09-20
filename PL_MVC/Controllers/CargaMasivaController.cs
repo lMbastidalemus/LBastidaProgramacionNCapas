@@ -121,7 +121,7 @@ namespace PL_MVC.Controllers
                             ML.Result result1 = BL.Usuario.AddEF(usuario);
                             if (!result1.Correct)
                             {
-                                string error = "Ocurrio un error al insertar el usuario" + result1.ErrorMessage;
+                                string error = "Ocurrio un error al insertar el usuario con correo: " + usuario.Email + "el error fue" + result1.ErrorMessage;
                                 resultErrores.Objects.Add(error);
                             }
                             //Se limpia la session porque si es que ya existe la sesion querra hacer el mismo proceso de antes
@@ -130,12 +130,14 @@ namespace PL_MVC.Controllers
                         }
                         if(resultErrores.Objects.Count > 0)
                         {
-                            string pathTxt = Server.MapPath(@"~\Files\logErrores.txt");
+                             string pathTxt = Server.MapPath(@"~\Files\logErrores.txt");
+                            
                             using (StreamWriter writter = new StreamWriter(pathTxt))
+
                             {
                                 foreach(string linea in resultErrores.Objects)
                                 {
-
+                                    writter.WriteLine(linea);
                                 }
                             }
                         }

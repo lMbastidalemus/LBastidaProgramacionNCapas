@@ -6,7 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
+<link type="text/css" rel="stylesheet" href="~/Content/Styles/CatalogoArea.css"/>
 <script src="http://bootboxjs.com/bootbox.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -21,90 +21,92 @@
 
     @using (Html.BeginForm("DepartamentoGetAll", "Departamento", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div class="col-md-3">
-            @Html.DropDownListFor(model => model.Area.IdArea, new SelectList(Model.Area.Areas, "IdArea", "Nombre"), "Seleccione un area", new { @class = "form-control" })
+        <div style="display:flex; justify-content:center">
+            <div class="col-md-3">
+                @Html.DropDownListFor(model => model.Area.IdArea, new SelectList(Model.Area.Areas, "IdArea", "Nombre"), "Seleccione un area", new { @class = "form-control" })
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @placeholder = "Apellido" })
+            </div>
+            <button class="btn btn-dark" type="submit" style="margin-bottom:2rem">Buscar</button>
         </div>
-        <div class="col-md-3">
-            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @placeholder = "Apellido" })
-        </div>
-        <button class="btn btn-dark" type="submit" style="margin-bottom:2rem">Buscar</button>
-    }
-    <table class="table" id="myTable">
-
-        <a class="btn btn-success btn-lg" href="@Url.Action("FormDepto", "Departamento")" style="margin-bottom:5rem">
-            <i class="fa-solid fa-user-plus fa-lg" style="color: #ffffff;"></i>
-        </a>
-        <thead>
-
-            <tr>
-                <th>Id Departamento</th>
-                <th>Departamento</th>
-                <th>Id Area</th>
-                <th>Area</th>
-                <th>Id Producto</th>
-                <th>Nombre Producto</th>
-                <th>Precio Unitario</th>
-                <th>Stock</th>
-                <th>Descripcion</th>
-                <th>Imagen</th>
-                <th>Id Proveedor</th>
-                <th>Telefono</th>
-                <th>Nombre Proveedor</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (ML.Departamento departamento in Model.Departamentos)
-            {
-                <tr>
-                    <td>@departamento.IdDepartamento</td>
-                    <td>@departamento.Nombre</td>
-                    <td>@departamento.Area.IdArea</td>
-                    <td>@departamento.Area.Nombre</td>
-                    <td>@departamento.Producto.IdProducto</td>
-                    <td>@departamento.Producto.Nombre</td>
-                    <td>@departamento.Producto.PrecioUnitario</td>
-                    <td>@departamento.Producto.Stock</td>
-                    <td>@departamento.Producto.Descripcion</td>
-                    <td>
-                        @if (departamento.Producto.Imagen == "" || departamento.Producto.Imagen == null)
-                        {
-                            <img src="https://www.computerhope.com/jargon/g/guest-user.png" width="50" height="50" style="border-radius:30px" />
-                        }
-                        else
-                        {
-                            <img src="data:image/*;base64,@departamento.Producto.Imagen" width="50" height="50" style="border-radius:30px" />
-                        }
-
-                    </td>
-                   
-                    <td>@departamento.Producto.Proveedor.IdProveedor</td>
-                    <td>@departamento.Producto.Proveedor.Telefono</td>
-                    <td>@departamento.Producto.Proveedor.Nombre</td>
-                    <td>
-                        <a class="btn btn-warning" href="@Url.Action("FormDepto", "Departamento", new {IdDepartamento = departamento.IdDepartamento})"> <i class="fa-sharp fa-solid fa-pencil fa-sm text-center"></i></a>
-                    </td>
-
-                    <td>
-                        <a class="btn btn-danger" href="@Url.Action("Eliminar", "Departamento", new {IdDepartamento = departamento.IdDepartamento})" onclick="return confirm('Estas seguro de eliminar el registro');">  <i class="fa-solid fa-user-xmark fa-lg"></i></a>
-                    </td>
-                </tr>
             }
-        </tbody>
-    </table>
-</div>
-<script>
-    let table = new DataTable('#myTable', {
-        responsive: true,
-        "lengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, "Todos"]],
-        searching: false,
-        language: {
-            url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
-        },
-    });
-</script>
+            <table class="table" id="myTable" >
+
+                <a class="btn btn-success btn-lg" href="@Url.Action("FormDepto", "Departamento")" style="margin-bottom:5rem">
+                    <i class="fa-solid fa-user-plus fa-lg" style="color: #ffffff;"></i>
+                </a>
+                <thead>
+
+                    <tr class="table-dark">
+                        <th>Id Departamento</th>
+                        <th>Departamento</th>
+                        <th>Id Area</th>
+                        <th>Area</th>
+                        <th>Id Producto</th>
+                        <th>Nombre Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Stock</th>
+                        <th>Descripcion</th>
+                        <th>Imagen</th>
+                        <th>Id Proveedor</th>
+                        <th>Telefono</th>
+                        <th>Nombre Proveedor</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                </thead>
+                <tbody >
+                    @foreach (ML.Departamento departamento in Model.Departamentos)
+                    {
+                        <tr class="table-primary">
+                            <td>@departamento.IdDepartamento</td>
+                            <td>@departamento.Nombre</td>
+                            <td>@departamento.Area.IdArea</td>
+                            <td>@departamento.Area.Nombre</td>
+                            <td>@departamento.Producto.IdProducto</td>
+                            <td>@departamento.Producto.Nombre</td>
+                            <td>@departamento.Producto.PrecioUnitario</td>
+                            <td>@departamento.Producto.Stock</td>
+                            <td>@departamento.Producto.Descripcion</td>
+                            <td>
+                                @if (departamento.Producto.Imagen == "" || departamento.Producto.Imagen == null)
+                                {
+                                    <img src="https://www.computerhope.com/jargon/g/guest-user.png" width="50" height="50" style="border-radius:30px" />
+                                }
+                                else
+                                {
+                                    <img src="data:image/*;base64,@departamento.Producto.Imagen" width="50" height="50" style="border-radius:30px" />
+                                }
+
+                            </td>
+
+                            <td>@departamento.Producto.Proveedor.IdProveedor</td>
+                            <td>@departamento.Producto.Proveedor.Telefono</td>
+                            <td>@departamento.Producto.Proveedor.Nombre</td>
+                            <td>
+                                <a class="btn btn-warning" href="@Url.Action("FormDepto", "Departamento", new {IdDepartamento = departamento.IdDepartamento})"> <i class="fa-sharp fa-solid fa-pencil fa-sm text-center"></i></a>
+                            </td>
+
+                            <td>
+                                <a class="btn btn-danger" href="@Url.Action("Eliminar", "Departamento", new {IdDepartamento = departamento.IdDepartamento})" onclick="return confirm('Estas seguro de eliminar el registro');">  <i class="fa-solid fa-user-xmark fa-lg"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <script>
+            let table = new DataTable('#myTable', {
+                responsive: true,
+                "lengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, "Todos"]],
+                searching: false,
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
+                },
+            });
+        </script>
 
 
 

@@ -27,9 +27,11 @@
                     @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
 
                 </div>
-
+            
                 <div class="col-md-4">
+
                     @Html.LabelFor(model => model.Area.IdArea)
+                    
                     @Html.DropDownListFor(model => model.Area.IdArea, new SelectList(Model.Area.Areas, "IdArea", "Nombre"), "Seleccione un area", new { @class = "form-control", @id = "ddlArea" })
                 </div>
 
