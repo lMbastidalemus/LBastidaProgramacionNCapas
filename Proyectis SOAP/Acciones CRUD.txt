@@ -1,0 +1,59 @@
+---------------------------------       Agregar ------------------------
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Add>
+         <!--Optional:-->
+         <tem:departamento>
+            <!--Optional:-->
+            <ml:Area>
+              
+               <!--Optional:-->
+               <ml:IdArea>3</ml:IdArea>
+            </ml:Area>
+          
+          
+            <!--Optional:-->
+            <ml:Nombre>Alimentos</ml:Nombre>
+            <!--Optional:-->
+            <ml:Producto>
+               <!--Optional:-->
+               <ml:Departamento/>
+               <!--Optional:-->
+               <ml:Descripcion>Bebidas energeticas</ml:Descripcion>
+            
+              
+               <!--Optional:-->
+               <ml:Nombre>Bebida Gatorade</ml:Nombre>
+               <!--Optional:-->
+               <ml:PrecioUnitario>250</ml:PrecioUnitario>
+               <!--Optional:-->
+              
+               <!--Optional:-->
+               <ml:Proveedor>
+                  <!--Optional:-->
+                  <ml:IdProveedor>5</ml:IdProveedor>
+                  <!--Optional:-->
+               </ml:Proveedor>
+               <!--Optional:-->
+               <ml:Stock>20</ml:Stock>
+            </ml:Producto>
+         </tem:departamento>
+      </tem:Add>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+---------------------------------       Eliminar ------------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Delete>
+         <!--Optional:-->
+         <tem:idDepartamento>39</tem:idDepartamento>
+      </tem:Delete>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -35,10 +35,6 @@ namespace SLWCF
             return a - b;
         }
 
-        public static ML.Result Add(ML.Departamento departamento)
-        {
-            ML.Result result = BL.Departamento.DepartamentoAddEF(departamento);
-            return result;
-        }
+       
     }
 }

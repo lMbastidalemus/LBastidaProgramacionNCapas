@@ -26,7 +26,6 @@ namespace SLWCF
         [OperationContract]
         int Resta(int a, int b);
 
-        [OperationContract]
-        string Add(ML.Departamento departamento);
+       
     }
 }
