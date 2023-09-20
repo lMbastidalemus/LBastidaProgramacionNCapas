@@ -37,8 +37,13 @@
 
                     <div class="carousel-inner">
                         <div class="item carousel-item active">
-                          
 
+
+                            <a class="btn btn-outline-dark" href="@Url.Action("GetProductos", "Catalogo", new {idArea = 0})">
+                                Ver todos los productos
+                            </a>
+
+                            
                             <div class="row">
                                 @foreach (ML.Area area in Model.Areas)
                                 {
@@ -61,7 +66,7 @@
 
                                 }
                             </div>
-                            
+
                         </div>
 
                     </div>

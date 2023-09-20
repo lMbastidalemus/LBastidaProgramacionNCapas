@@ -390,6 +390,11 @@ namespace DLEF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("departamentoAdd", nombreParameter, idAreaParameter, nombreProductoParameter, precioUnitarioParameter, stockParameter, descripcionParameter, idProveedorParameter, imagenParameter);
         }
     
+        public virtual ObjectResult<ProductoGetAll_Result> ProductoGetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ProductoGetAll_Result>("ProductoGetAll");
+        }
+    
         public virtual ObjectResult<ProductoGetByIdArea_Result> ProductoGetByIdArea(Nullable<int> idArea)
         {
             var idAreaParameter = idArea.HasValue ?

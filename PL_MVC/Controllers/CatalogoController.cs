@@ -22,22 +22,34 @@ namespace PL_MVC.Controllers
         [HttpGet]
         public ActionResult GetProductos(int? idArea)
         {
+            ML.Producto producto1 = new ML.Producto();
+            producto1.Departamento = new ML.Departamento();
+            producto1.Departamento.Area = new ML.Area();
             ML.Result result = BL.Producto.GetALL(idArea.Value);
-            if (result.Correct)
+            if (idArea == 0)
             {
-                ML.Producto producto = new ML.Producto();
-                producto.Productos = result.Objects;
-                return View(producto);
+                ML.Producto producto3 = new ML.Producto();
+                producto3.Productos = result.Objects;
+                return View(producto3);
             }
             else
             {
-                ViewBag.Mensaje = "Error en la consulta";
-                return PartialView("Modal");
+                if (result.Correct)
+                {
+                    ML.Producto producto = new ML.Producto();
+                    producto.Productos = result.Objects;
+                    return View(producto);
+                }
+                else
+                {
+                    return View();
+                }
             }
+           
         }
 
         [HttpPost]
-        public ActionResult GetProductos()
+        public ActionResult GetProductos(ML.Producto producto)
         {
             return View();
 

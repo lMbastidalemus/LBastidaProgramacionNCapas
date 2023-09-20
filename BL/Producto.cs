@@ -14,25 +14,25 @@ namespace BL
             try{
                 using(DLEF.LBastidaProgramacionNCapasEntities1 context = new DLEF.LBastidaProgramacionNCapasEntities1())
                 {
-                    var tablaArea = context.ProductoGetByIdArea(idArea).ToList();
+                    var tablaArea = context.ProductoGetByIdArea(idArea);
                     result.Objects = new List<object>();
                     if(tablaArea != null)
                     {
                         foreach(var obj in tablaArea)
                         {
-                            ML.Producto producto = new ML.Producto();   
-                            producto.IdProducto = obj.IdProducto;
-                            producto.Nombre = obj.Nombre;
-                            producto.PrecioUnitario = obj.PrecioUnitario;
-                            producto.Stock = obj.Stock;
-                            producto.Descripcion = obj.Descripcion;
-                            producto.Imagen = obj.Imagen;
-                            producto.Departamento = new ML.Departamento();
-                            
-                            producto.Departamento.Area = new ML.Area();
-                            producto.Departamento.Nombre = obj.NombreDepartamento;
-                            producto.Departamento.Area.Nombre = obj.NombreArea;
-                            result.Objects.Add(producto);
+                            ML.Producto productoDatos = new ML.Producto();
+                            productoDatos.IdProducto = obj.IdProducto;
+                            productoDatos.Nombre = obj.Nombre;
+                            productoDatos.PrecioUnitario = obj.PrecioUnitario;
+                            productoDatos.Stock = obj.Stock;
+                            productoDatos.Descripcion = obj.Descripcion;
+                            productoDatos.Imagen = obj.Imagen;
+                            productoDatos.Departamento = new ML.Departamento();
+
+                            productoDatos.Departamento.Area = new ML.Area();
+                            productoDatos.Departamento.Nombre = obj.NombreDepartamento;
+                            productoDatos.Departamento.Area.Nombre = obj.NombreArea;
+                            result.Objects.Add(productoDatos);
 
                         }
                         result.Correct = true;
@@ -52,5 +52,10 @@ namespace BL
             }
             return result;
         }
+
+
+
+
+      
     }
 }

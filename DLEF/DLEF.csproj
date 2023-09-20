@@ -114,6 +114,9 @@
     <Compile Include="Producto.cs">
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductoGetAll_Result.cs">
+      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProductoGetByIdArea_Result.cs">
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>

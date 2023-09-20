@@ -261,6 +261,7 @@
           <Parameter Name="IdEstado" Type="int" Mode="In" />
         </Function>
         <Function Name="PaisGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ProductoGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ProductoGetByIdArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdArea" Type="int" Mode="In" />
         </Function>
@@ -533,6 +534,7 @@
             <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
             <Parameter Name="Imagen" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="ProductoGetAll" ReturnType="Collection(LBastidaProgramacionNCapasModel.ProductoGetAll_Result)" />
           <FunctionImport Name="ProductoGetByIdArea" ReturnType="Collection(LBastidaProgramacionNCapasModel.ProductoGetByIdArea_Result)">
             <Parameter Name="IdArea" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -885,6 +887,16 @@
           <Property Type="Int32" Name="IdProveedor" Nullable="false" />
           <Property Type="String" Name="Telefono" Nullable="false" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="ProductoGetAll_Result">
+          <Property Type="Int32" Name="IdProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="200" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Imagen" Nullable="true" />
+          <Property Type="String" Name="NombreDepartamento" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
+        </ComplexType>
         <ComplexType Name="ProductoGetByIdArea_Result">
           <Property Type="Int32" Name="IdProducto" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="200" />
@@ -1197,6 +1209,20 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="departamentoUpdate" FunctionName="LBastidaProgramacionNCapasModel.Store.departamentoUpdate" />
           <FunctionImportMapping FunctionImportName="departamentoAdd" FunctionName="LBastidaProgramacionNCapasModel.Store.departamentoAdd" />
+          <FunctionImportMapping FunctionImportName="ProductoGetAll" FunctionName="LBastidaProgramacionNCapasModel.Store.ProductoGetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.ProductoGetAll_Result">
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="NombreDepartamento" ColumnName="NombreDepartamento" />
+                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ProductoGetByIdArea" FunctionName="LBastidaProgramacionNCapasModel.Store.ProductoGetByIdArea">
             <ResultMapping>
               <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.ProductoGetByIdArea_Result">
