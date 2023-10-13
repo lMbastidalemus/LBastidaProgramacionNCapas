@@ -1,0 +1,105 @@
+EJECUCIONES EN POSTMAN
+Lo que me trae con getbyid
+{
+    "ErrorMessage": null,
+    "Correct": true,
+    "Object": {
+        "IdDepartamento": 63,
+        "Nombre": "FraganciasAgregado3",
+        "Area": {
+            "IdArea": 4,
+            "Nombre": "Administracion",
+            "Areas": null
+        },
+        "Producto": {
+            "IdProducto": 0,
+            "Nombre": null,
+            "PrecioUnitario": 0.0,
+            "Stock": 0,
+            "Descripcion": null,
+            "Proveedor": {
+                "IdProveedor": 0,
+                "Telefono": null,
+                "Nombre": null,
+                "Proveedores": null
+            },
+            "Departamento": null,
+            "Productos": null,
+            "Imagen": null
+        },
+        "Departamentos": null
+    },
+    "Objects": null,
+    "Ex": null
+}
+
+
+
+
+AGREGAR   http://localhost:58157/api/departamento
+
+
+{
+    "IdDepartamento": 45,
+    "Nombre": "FraganciasAgregado2",
+    "Area":{
+        "IdArea": 4,
+        "Nombre": "Administracion",
+        "Areas":[
+            {}
+            
+        ]
+    },
+    "Departamentos":[
+        {}
+    ]
+}
+
+
+DELETE http://localhost:58157/api/departamento/60
+
+
+GetById http://localhost:58157/api/departamento/63
+
+
+UPdatee    http://localhost:58157/api/departamento/63
+
+{
+    
+    "Nombre": "Perfumes",
+    "Area":{
+        "IdArea": 6,
+        "Nombre": "Produccion",
+        "Areas":[
+            {}
+            
+        ]
+    },
+    "Departamentos":[
+        {}
+    ]
+}
+
+
+
+
+GetAll http://localhost:58157/api/departamento
+
+{
+    
+    "Nombre": "",
+    "Area":{
+        "IdArea": 0,
+        "Nombre": "",
+        "Areas":[
+            {}
+            
+        ]
+    },
+    "Departamentos":[
+        {}
+    ]
+}
+
+
+

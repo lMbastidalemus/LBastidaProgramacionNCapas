@@ -69,12 +69,6 @@
     <Compile Include="Departamento.cs">
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
-    <Compile Include="DepartamentoGetAll_Result.cs">
-      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DepartamentoGetById_Result.cs">
-      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
-    </Compile>
     <Compile Include="Direccion.cs">
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
@@ -82,6 +76,18 @@
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
     <Compile Include="EstadoGetByIdPais_Result.cs">
+      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllDepartamento_Result.cs">
+      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllProducto_Result.cs">
+      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetByIdDepartamento_Result.cs">
+      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetByIdProducto_Result.cs">
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
     <Compile Include="LBastidaProgramacionNCapas.Context.cs">
@@ -112,9 +118,6 @@
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
     <Compile Include="Producto.cs">
-      <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductoGetAll_Result.cs">
       <DependentUpon>LBastidaProgramacionNCapas.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductoGetByIdArea_Result.cs">

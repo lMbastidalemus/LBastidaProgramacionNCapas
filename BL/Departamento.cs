@@ -8,7 +8,7 @@ namespace BL
 {
     public class Departamento
     {
-       public static ML.Result DepartamentoAddEF(ML.Departamento departamento)
+       public static ML.Result AddEF(ML.Departamento departamento)
         {
             ML.Result result = new ML.Result();
             try
@@ -16,10 +16,7 @@ namespace BL
 
                 using (DLEF.LBastidaProgramacionNCapasEntities1 context = new DLEF.LBastidaProgramacionNCapasEntities1())
                 {
-                    var query = context.departamentoAdd(departamento.Nombre, departamento.Area.IdArea,
-                        departamento.Producto.Nombre, departamento.Producto.PrecioUnitario,
-                        departamento.Producto.Stock,departamento.Producto.Descripcion, departamento.Producto.Proveedor.IdProveedor,
-                        departamento.Producto.Imagen);
+                    var query = context.AddDepartamento(departamento.Nombre, departamento.Area.IdArea);
                     if(query > 0)
                     {
                         result.Correct = true;
@@ -40,7 +37,7 @@ namespace BL
             return result;
         }
 
-        public static ML.Result DepartamentoUpdateEF(ML.Departamento departamento)
+        public static ML.Result UpdateEF(ML.Departamento departamento)
         {
             ML.Result result = new ML.Result();
             try
@@ -48,8 +45,7 @@ namespace BL
 
                 using (DLEF.LBastidaProgramacionNCapasEntities1 context = new DLEF.LBastidaProgramacionNCapasEntities1())
                 {
-                    var query = context.departamentoUpdate(departamento.IdDepartamento, departamento.Nombre, departamento.Area.IdArea, departamento.Producto.Nombre, departamento.Producto.PrecioUnitario, 
-                        departamento.Producto.Stock, departamento.Producto.Descripcion, departamento.Producto.Proveedor.IdProveedor, departamento.Producto.Imagen);
+                    var query = context.UpdateDepartamento(departamento.IdDepartamento, departamento.Nombre, departamento.Area.IdArea );
                     if (query > 0)
                     {
                         result.Correct = true;
@@ -70,14 +66,14 @@ namespace BL
             return result;
         }
 
-        public static ML.Result DepartamentoGetAllEF(ML.Departamento departamento)
+        public static ML.Result GetAllEF(ML.Departamento departamento)
         {
             ML.Result result = new ML.Result();
             try
             {
                 using (DLEF.LBastidaProgramacionNCapasEntities1 context = new DLEF.LBastidaProgramacionNCapasEntities1())
                 {
-                    var query = context.DepartamentoGetAll(departamento.Area.IdArea,  departamento.Nombre);
+                    var query = context.GetAllDepartamento(departamento.Area.IdArea,  departamento.Nombre);
                     result.Objects = new List<object>().ToList();
                     if(query != null)
                     {
@@ -91,17 +87,7 @@ namespace BL
                             departamentoResult.Area = new ML.Area();
                             departamentoResult.Area.IdArea = registro.IdArea;
                             departamentoResult.Area.Nombre = registro.NombreArea;
-                            departamentoResult.Producto = new ML.Producto();
-                            departamentoResult.Producto.IdProducto = registro.IdProducto;
-                            departamentoResult.Producto.Nombre = registro.NombreProducto;
-                            departamentoResult.Producto.PrecioUnitario = registro.PrecioUnitario;
-                            departamentoResult.Producto.Stock = registro.Stock;
-                            departamentoResult.Producto.Descripcion = registro.Descripcion;
-                            departamentoResult.Producto.Imagen = registro.Imagen;
-                            departamentoResult.Producto.Proveedor = new ML.Proveedor();
-                            departamentoResult.Producto.Proveedor.IdProveedor = registro.IdProveedor;
-                            departamentoResult.Producto.Proveedor.Telefono = registro.Telefono;
-                            departamentoResult.Producto.Proveedor.Nombre = registro.NombreProveedor;
+                           
                             result.Objects.Add(departamentoResult);   
                         }
                         result.Correct = true;
@@ -122,14 +108,14 @@ namespace BL
 
         }
 
-        public static ML.Result DepartamentoGetByIdEF(int IdDepartamento)
+        public static ML.Result GetByIdEF(int IdDepartamento)
         {
             ML.Result result = new ML.Result();
             try
             {
                 using(DLEF.LBastidaProgramacionNCapasEntities1 context = new DLEF.LBastidaProgramacionNCapasEntities1())
                 {
-                    var query = context.DepartamentoGetById(IdDepartamento).SingleOrDefault();
+                    var query = context.GetByIdDepartamento(IdDepartamento).SingleOrDefault();
                     if(query != null)
                     {
                         ML.Departamento departamentoResult = new ML.Departamento();
@@ -140,12 +126,7 @@ namespace BL
                         departamentoResult.Producto.Proveedor = new ML.Proveedor();
                         departamentoResult.Area.IdArea = query.IdArea;
                         departamentoResult.Area.Nombre = query.NombreArea;
-                        departamentoResult.Producto.Nombre = query.NombreProducto;
-                        departamentoResult.Producto.PrecioUnitario = query.PrecioUnitario;
-                        departamentoResult.Producto.Stock = query.Stock;
-                        departamentoResult.Producto.Descripcion = query.Descripcion;
-                        departamentoResult.Producto.Proveedor.IdProveedor = query.IdProveedor;
-                        departamentoResult.Producto.Imagen = query.Imagen;
+                      
                         result.Object = departamentoResult;
                         result.Correct = true;
                     }
@@ -164,14 +145,14 @@ namespace BL
             return result;
         }
 
-        public static ML.Result DepartamentoDeleteEF(int IdDepartamento)
+        public static ML.Result DeleteEF(int IdDepartamento)
         {
             ML.Result result = new ML.Result();
             try
             {
                 using (DLEF.LBastidaProgramacionNCapasEntities1 context = new DLEF.LBastidaProgramacionNCapasEntities1())
                 {
-                    var query = context.departamentoDelete(IdDepartamento);
+                    var query = context.DeleteDepartamento(IdDepartamento);
                     if(query >0)
                     {
                         result.Correct = true;

@@ -11,9 +11,9 @@ namespace SLWCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select ServiceDepartamento.svc or ServiceDepartamento.svc.cs at the Solution Explorer and start debugging.
     public class ServiceDepartamento : IServiceDepartamento
     {
-       public  SLWCF.Result Add(ML.Departamento departamento)
+        public SLWCF.Result Add(ML.Departamento departamento)
         {
-            ML.Result result = BL.Departamento.DepartamentoAddEF(departamento);
+            ML.Result result = BL.Departamento.AddEF(departamento);
             return new SLWCF.Result
             {
                 Correct = result.Correct,
@@ -26,7 +26,7 @@ namespace SLWCF
 
         public SLWCF.Result Delete(int idDepartamento)
         {
-            ML.Result result = BL.Departamento.DepartamentoDeleteEF(idDepartamento);
+            ML.Result result = BL.Departamento.DeleteEF(idDepartamento);
             return new SLWCF.Result
             {
                 Correct = result.Correct,
@@ -34,13 +34,13 @@ namespace SLWCF
                 Ex = result.Ex,
                 Object = result.Object,
                 Objects = result.Objects,
-                
+
             };
         }
 
         public SLWCF.Result Update(ML.Departamento departamento)
         {
-            ML.Result result = BL.Departamento.DepartamentoUpdateEF(departamento);
+            ML.Result result = BL.Departamento.UpdateEF(departamento);
             return new SLWCF.Result
             {
                 Correct = result.Correct,
@@ -51,5 +51,35 @@ namespace SLWCF
 
             };
         }
+
+        public SLWCF.Result GetAll(ML.Departamento departamento)
+        {
+            ML.Result result = BL.Departamento.GetAllEF(departamento);
+            return new SLWCF.Result
+            {
+                Correct = result.Correct,
+                ErrorMessage = result.ErrorMessage,
+                Ex = result.Ex,
+                Object = result.Object,
+                Objects = result.Objects,
+
+            };
+        }
+
+        public SLWCF.Result GetById(int idDepartamento)
+        {
+            ML.Result result = BL.Departamento.GetByIdEF(idDepartamento);
+            return new SLWCF.Result
+            {
+                Correct = result.Correct,
+                ErrorMessage = result.ErrorMessage,
+                Ex = result.Ex,
+                Object = result.Object,
+                Objects = result.Objects,
+
+            };
+        }
+
+
     }
 }

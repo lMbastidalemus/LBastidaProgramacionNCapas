@@ -219,54 +219,67 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="AddDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="IdArea" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrecioUnitario" Type="decimal" Mode="In" />
+          <Parameter Name="Stock" Type="int" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="IdProveedor" Type="int" Mode="In" />
+          <Parameter Name="IdDepartamento" Type="int" Mode="In" />
+          <Parameter Name="Imagen" Type="varchar(max)" Mode="In" />
+        </Function>
         <Function Name="AreaGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ColoniaGetByIdMunicipio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdMunicipio" Type="int" Mode="In" />
         </Function>
-        <Function Name="departamentoAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="IdArea" Type="int" Mode="In" />
-          <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-          <Parameter Name="PrecioUnitario" Type="decimal" Mode="In" />
-          <Parameter Name="Stock" Type="int" Mode="In" />
-          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
-          <Parameter Name="IdProveedor" Type="int" Mode="In" />
-          <Parameter Name="Imagen" Type="varchar(max)" Mode="In" />
-        </Function>
-        <Function Name="departamentoDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="DeleteDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdDepartamento" Type="int" Mode="In" />
         </Function>
-        <Function Name="DepartamentoGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdArea" Type="int" Mode="In" />
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="DepartamentoGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdDepartamento" Type="int" Mode="In" />
-        </Function>
-        <Function Name="departamentoUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdDepartamento" Type="int" Mode="In" />
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="IdArea" Type="int" Mode="In" />
-          <Parameter Name="NombreProducto" Type="varchar" Mode="In" />
-          <Parameter Name="PrecioUnitario" Type="decimal" Mode="In" />
-          <Parameter Name="Stock" Type="int" Mode="In" />
-          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
-          <Parameter Name="IdProveedor" Type="int" Mode="In" />
-          <Parameter Name="Imagen" Type="varchar(max)" Mode="In" />
+        <Function Name="DeleteProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
         </Function>
         <Function Name="EstadoGetByIdPais" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdPais" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAllDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArea" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetAllProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetByIdDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdDepartamento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetByIdProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
         </Function>
         <Function Name="MunicipioGetByIdEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdEstado" Type="int" Mode="In" />
         </Function>
         <Function Name="PaisGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="ProductoGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ProductoGetByIdArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdArea" Type="int" Mode="In" />
         </Function>
         <Function Name="ProveedorGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="RolGetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdDepartamento" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="IdArea" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrecioUnitario" Type="decimal" Mode="In" />
+          <Parameter Name="Stock" Type="int" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="IdProveedor" Type="int" Mode="In" />
+          <Parameter Name="IdDepartamento" Type="int" Mode="In" />
+          <Parameter Name="Imagen" Type="varchar(max)" Mode="In" />
+        </Function>
         <Function Name="UsuarioAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdRol" Type="int" Mode="In" />
           <Parameter Name="UserName" Type="varchar" Mode="In" />
@@ -498,45 +511,58 @@
             <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
             <Parameter Name="FilasAfectadas" Mode="InOut" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="departamentoDelete">
-          <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="ProveedorGetAll" ReturnType="Collection(LBastidaProgramacionNCapasModel.ProveedorGetAll_Result)" />
           <FunctionImport Name="UsuarioGetAll" ReturnType="Collection(LBastidaProgramacionNCapasModel.UsuarioGetAll_Result)">
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Apellido" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="DepartamentoGetAll" ReturnType="Collection(LBastidaProgramacionNCapasModel.DepartamentoGetAll_Result)">
+          <FunctionImport Name="ProductoGetByIdArea" ReturnType="Collection(LBastidaProgramacionNCapasModel.ProductoGetByIdArea_Result)">
+          <Parameter Name="IdArea" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddDepartamento">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="IdArea" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteDepartamento">
+          <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllDepartamento" ReturnType="Collection(LBastidaProgramacionNCapasModel.GetAllDepartamento_Result)">
             <Parameter Name="IdArea" Mode="In" Type="Int32" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="DepartamentoGetById" ReturnType="Collection(LBastidaProgramacionNCapasModel.DepartamentoGetById_Result)">
+          <FunctionImport Name="GetByIdDepartamento" ReturnType="Collection(LBastidaProgramacionNCapasModel.GetByIdDepartamento_Result)">
           <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="departamentoUpdate">
+          <FunctionImport Name="UpdateDepartamento">
             <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="IdArea" Mode="In" Type="Int32" />
-            <Parameter Name="NombreProducto" Mode="In" Type="String" />
-            <Parameter Name="PrecioUnitario" Mode="In" Type="Decimal" />
-            <Parameter Name="Stock" Mode="In" Type="Int32" />
-            <Parameter Name="Descripcion" Mode="In" Type="String" />
-            <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
-            <Parameter Name="Imagen" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="departamentoAdd">
+          <FunctionImport Name="AddProducto">
             <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="IdArea" Mode="In" Type="Int32" />
-            <Parameter Name="NombreProducto" Mode="In" Type="String" />
             <Parameter Name="PrecioUnitario" Mode="In" Type="Decimal" />
             <Parameter Name="Stock" Mode="In" Type="Int32" />
             <Parameter Name="Descripcion" Mode="In" Type="String" />
             <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
+            <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
             <Parameter Name="Imagen" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="ProductoGetAll" ReturnType="Collection(LBastidaProgramacionNCapasModel.ProductoGetAll_Result)" />
-          <FunctionImport Name="ProductoGetByIdArea" ReturnType="Collection(LBastidaProgramacionNCapasModel.ProductoGetByIdArea_Result)">
-            <Parameter Name="IdArea" Mode="In" Type="Int32" />
+          <FunctionImport Name="DeleteProducto">
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllProducto" ReturnType="Collection(LBastidaProgramacionNCapasModel.GetAllProducto_Result)" />
+          <FunctionImport Name="GetByIdProducto" ReturnType="Collection(LBastidaProgramacionNCapasModel.GetByIdProducto_Result)">
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateProducto">
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrecioUnitario" Mode="In" Type="Decimal" />
+            <Parameter Name="Stock" Mode="In" Type="Int32" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
+            <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
+            <Parameter Name="Imagen" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Usuario">
@@ -858,45 +884,6 @@
           <Property Type="String" Name="NombrePais" Nullable="false" MaxLength="50" />
           <Property Type="Boolean" Name="Status" Nullable="false" />
         </ComplexType>
-        <ComplexType Name="DepartamentoGetAll_Result">
-          <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="IdArea" Nullable="false" />
-          <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="IdProducto" Nullable="false" />
-          <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="200" />
-          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
-          <Property Type="Int32" Name="Stock" Nullable="false" />
-          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="Imagen" Nullable="true" />
-          <Property Type="Int32" Name="IdProveedor" Nullable="false" />
-          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="DepartamentoGetById_Result">
-          <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="IdArea" Nullable="false" />
-          <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="IdProducto" Nullable="false" />
-          <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="200" />
-          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
-          <Property Type="Int32" Name="Stock" Nullable="false" />
-          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="Imagen" Nullable="true" />
-          <Property Type="Int32" Name="IdProveedor" Nullable="false" />
-          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="20" />
-        </ComplexType>
-        <ComplexType Name="ProductoGetAll_Result">
-          <Property Type="Int32" Name="IdProducto" Nullable="false" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="200" />
-          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
-          <Property Type="Int32" Name="Stock" Nullable="false" />
-          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="Imagen" Nullable="true" />
-          <Property Type="String" Name="NombreDepartamento" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
-        </ComplexType>
         <ComplexType Name="ProductoGetByIdArea_Result">
           <Property Type="Int32" Name="IdProducto" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="200" />
@@ -906,6 +893,44 @@
           <Property Type="String" Name="Imagen" Nullable="true" />
           <Property Type="String" Name="NombreDepartamento" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetAllDepartamento_Result">
+          <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="IdArea" Nullable="false" />
+          <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetByIdDepartamento_Result">
+          <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="IdArea" Nullable="false" />
+          <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetAllProducto_Result">
+          <Property Type="Int32" Name="IdProducto" Nullable="false" />
+          <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="200" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Imagen" Nullable="true" />
+          <Property Type="Int32" Name="IdProveedor" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetByIdProducto_Result">
+          <Property Type="Int32" Name="IdProducto" Nullable="false" />
+          <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="200" />
+          <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Imagen" Nullable="true" />
+          <Property Type="Int32" Name="IdProveedor" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NombreProveedor" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1125,7 +1150,6 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="UsuarioAdd" FunctionName="LBastidaProgramacionNCapasModel.Store.UsuarioAdd" />
           <FunctionImportMapping FunctionImportName="usuarioDelete" FunctionName="LBastidaProgramacionNCapasModel.Store.usuarioDelete" />
-          <FunctionImportMapping FunctionImportName="departamentoDelete" FunctionName="LBastidaProgramacionNCapasModel.Store.departamentoDelete" />
           <FunctionImportMapping FunctionImportName="ProveedorGetAll" FunctionName="LBastidaProgramacionNCapasModel.Store.ProveedorGetAll">
             <ResultMapping>
               <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.ProveedorGetAll_Result">
@@ -1170,59 +1194,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DepartamentoGetAll" FunctionName="LBastidaProgramacionNCapasModel.Store.DepartamentoGetAll">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.DepartamentoGetAll_Result">
-                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="IdArea" ColumnName="IdArea" />
-                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
-                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DepartamentoGetById" FunctionName="LBastidaProgramacionNCapasModel.Store.DepartamentoGetById">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.DepartamentoGetById_Result">
-                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="IdArea" ColumnName="IdArea" />
-                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
-                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
-                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="departamentoUpdate" FunctionName="LBastidaProgramacionNCapasModel.Store.departamentoUpdate" />
-          <FunctionImportMapping FunctionImportName="departamentoAdd" FunctionName="LBastidaProgramacionNCapasModel.Store.departamentoAdd" />
-          <FunctionImportMapping FunctionImportName="ProductoGetAll" FunctionName="LBastidaProgramacionNCapasModel.Store.ProductoGetAll">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.ProductoGetAll_Result">
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
-                <ScalarProperty Name="NombreDepartamento" ColumnName="NombreDepartamento" />
-                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ProductoGetByIdArea" FunctionName="LBastidaProgramacionNCapasModel.Store.ProductoGetByIdArea">
             <ResultMapping>
               <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.ProductoGetByIdArea_Result">
@@ -1237,6 +1208,66 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AddDepartamento" FunctionName="LBastidaProgramacionNCapasModel.Store.AddDepartamento" />
+          <FunctionImportMapping FunctionImportName="DeleteDepartamento" FunctionName="LBastidaProgramacionNCapasModel.Store.DeleteDepartamento" />
+          <FunctionImportMapping FunctionImportName="GetAllDepartamento" FunctionName="LBastidaProgramacionNCapasModel.Store.GetAllDepartamento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.GetAllDepartamento_Result">
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetByIdDepartamento" FunctionName="LBastidaProgramacionNCapasModel.Store.GetByIdDepartamento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.GetByIdDepartamento_Result">
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateDepartamento" FunctionName="LBastidaProgramacionNCapasModel.Store.UpdateDepartamento" />
+          <FunctionImportMapping FunctionImportName="AddProducto" FunctionName="LBastidaProgramacionNCapasModel.Store.AddProducto" />
+          <FunctionImportMapping FunctionImportName="DeleteProducto" FunctionName="LBastidaProgramacionNCapasModel.Store.DeleteProducto" />
+          <FunctionImportMapping FunctionImportName="GetAllProducto" FunctionName="LBastidaProgramacionNCapasModel.Store.GetAllProducto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.GetAllProducto_Result">
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetByIdProducto" FunctionName="LBastidaProgramacionNCapasModel.Store.GetByIdProducto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LBastidaProgramacionNCapasModel.GetByIdProducto_Result">
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateProducto" FunctionName="LBastidaProgramacionNCapasModel.Store.UpdateProducto" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

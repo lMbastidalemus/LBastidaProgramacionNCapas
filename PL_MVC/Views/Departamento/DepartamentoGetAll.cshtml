@@ -43,15 +43,6 @@
                         <th>Departamento</th>
                         <th>Id Area</th>
                         <th>Area</th>
-                        <th>Id Producto</th>
-                        <th>Nombre Producto</th>
-                        <th>Precio Unitario</th>
-                        <th>Stock</th>
-                        <th>Descripcion</th>
-                        <th>Imagen</th>
-                        <th>Id Proveedor</th>
-                        <th>Telefono</th>
-                        <th>Nombre Proveedor</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
 
@@ -65,26 +56,7 @@
                             <td>@departamento.Nombre</td>
                             <td>@departamento.Area.IdArea</td>
                             <td>@departamento.Area.Nombre</td>
-                            <td>@departamento.Producto.IdProducto</td>
-                            <td>@departamento.Producto.Nombre</td>
-                            <td>@departamento.Producto.PrecioUnitario</td>
-                            <td>@departamento.Producto.Stock</td>
-                            <td>@departamento.Producto.Descripcion</td>
-                            <td>
-                                @if (departamento.Producto.Imagen == "" || departamento.Producto.Imagen == null)
-                                {
-                                    <img src="https://www.computerhope.com/jargon/g/guest-user.png" width="50" height="50" style="border-radius:30px" />
-                                }
-                                else
-                                {
-                                    <img src="data:image/*;base64,@departamento.Producto.Imagen" width="50" height="50" style="border-radius:30px" />
-                                }
-
-                            </td>
-
-                            <td>@departamento.Producto.Proveedor.IdProveedor</td>
-                            <td>@departamento.Producto.Proveedor.Telefono</td>
-                            <td>@departamento.Producto.Proveedor.Nombre</td>
+                          
                             <td>
                                 <a class="btn btn-warning" href="@Url.Action("FormDepto", "Departamento", new {IdDepartamento = departamento.IdDepartamento})"> <i class="fa-sharp fa-solid fa-pencil fa-sm text-center"></i></a>
                             </td>

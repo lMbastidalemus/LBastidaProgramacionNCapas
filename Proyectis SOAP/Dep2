@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5cc162e3-08d3-45db-a7eb-5f6f23586b37" activeEnvironment="Default" name="ServiceDepartamento" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a478e07f-d5c7-47c8-b5dd-4aec3a8957e0" wsaVersion="NONE" name="BasicHttpBinding_IServiceDepartamento" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IServiceDepartamento" soapVersion="1_1" anonymous="optional" definition="http://localhost:64876/ServiceDepartamento.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:64876/ServiceDepartamento.svc?wsdl"><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ServiceDepartamento" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ML"/>
+      <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceDepartamento_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetById"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IServiceDepartamento">
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/Add" message="tns:IServiceDepartamento_Add_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/AddResponse" message="tns:IServiceDepartamento_Add_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/Delete" message="tns:IServiceDepartamento_Delete_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/DeleteResponse" message="tns:IServiceDepartamento_Delete_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/Update" message="tns:IServiceDepartamento_Update_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/UpdateResponse" message="tns:IServiceDepartamento_Update_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/GetAll" message="tns:IServiceDepartamento_GetAll_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/GetAllResponse" message="tns:IServiceDepartamento_GetAll_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/GetById" message="tns:IServiceDepartamento_GetById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/GetByIdResponse" message="tns:IServiceDepartamento_GetById_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceDepartamento" type="tns:IServiceDepartamento">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/Add" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/Delete" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/Update" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/GetAll" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/GetById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceDepartamento">
+    <wsdl:port name="BasicHttpBinding_IServiceDepartamento" binding="tns:BasicHttpBinding_IServiceDepartamento">
+      <soap:address location="http://localhost:64876/ServiceDepartamento.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ML"/>
+  <xs:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SLWCF"/>
+  <xs:element name="Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="q1:Departamento" xmlns:q1="http://schemas.datacontract.org/2004/07/ML"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddResult" nillable="true" type="q2:Result" xmlns:q2="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDepartamento" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteResult" nillable="true" type="q3:Result" xmlns:q3="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="q4:Departamento" xmlns:q4="http://schemas.datacontract.org/2004/07/ML"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateResult" nillable="true" type="q5:Result" xmlns:q5="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="q6:Departamento" xmlns:q6="http://schemas.datacontract.org/2004/07/ML"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllResult" nillable="true" type="q7:Result" xmlns:q7="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDepartamento" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetByIdResult" nillable="true" type="q8:Result" xmlns:q8="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ML" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ML">
+  <xs:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area" nillable="true" type="tns:Area"/>
+      <xs:element minOccurs="0" name="Departamentos" nillable="true" type="q1:ArrayOfanyType" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="IdDepartamento" type="xs:int"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="tns:Producto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Departamento" nillable="true" type="tns:Departamento"/>
+  <xs:complexType name="Area">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Areas" nillable="true" type="q2:ArrayOfanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="IdArea" type="xs:int"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Area" nillable="true" type="tns:Area"/>
+  <xs:complexType name="Producto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="tns:Departamento"/>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int"/>
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Productos" nillable="true" type="q3:ArrayOfanyType" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor"/>
+      <xs:element minOccurs="0" name="Stock" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Producto" nillable="true" type="tns:Producto"/>
+  <xs:complexType name="Proveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdProveedor" type="xs:int"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Proveedores" nillable="true" type="q4:ArrayOfanyType" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Proveedor" nillable="true" type="tns:Proveedor"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <xs:complexType name="ArrayOfanyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SLWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SLWCF">
+  <xs:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System"/>
+  <xs:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Correct" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Ex" nillable="true" type="q1:Exception" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="Object" nillable="true" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="Objects" nillable="true" type="q2:ArrayOfanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Result" nillable="true" type="tns:Result"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?xsd=xsd5</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/System" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip"/>
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType"/>
+  </xs:complexType>
+  <xs:element name="Exception" nillable="true" type="tns:Exception"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint></con:endpoints><con:operation id="346b9bd9-0330-4234-b747-c0b3ebd20def" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="014f83bf-b680-4306-81c0-fd0ccb369b52" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Add>
+         <!--Optional:-->
+         <tem:departamento>
+            <!--Optional:-->
+            <ml:Area>
+               <!--Optional:-->
+             
+               <!--Optional:-->
+               <ml:IdArea>7</ml:IdArea>
+               <!--Optional:-->
+              
+            </ml:Area>
+            <!--Optional:-->
+         
+            <!--Optional:-->
+        
+            <ml:Nombre>Finanzas 3</ml:Nombre>
+            <!--Optional:-->
+           
+         </tem:departamento>
+      </tem:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Add"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="57543d3a-1e6a-4464-bdf8-45c77623bdcf" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7119fde8-afc4-47d8-aa95-9a1fba263f14" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Delete>\r
+         <!--Optional:-->\r
+         <tem:idDepartamento>?</tem:idDepartamento>\r
+      </tem:Delete>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Delete"/></con:call></con:operation><con:operation id="45aac20f-4b83-4345-b1a5-e47daaafdefd" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/GetAll" name="GetAll" bindingOperationName="GetAll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="64f7b607-a617-4e4b-88b2-d50430f674c4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetAll>\r
+         <!--Optional:-->\r
+         <tem:departamento>\r
+            <!--Optional:-->\r
+            <ml:Area>\r
+               <!--Optional:-->\r
+               <ml:Areas>\r
+                  <!--Zero or more repetitions:-->\r
+                  <arr:anyType>?</arr:anyType>\r
+               </ml:Areas>\r
+               <!--Optional:-->\r
+               <ml:IdArea>?</ml:IdArea>\r
+               <!--Optional:-->\r
+               <ml:Nombre>?</ml:Nombre>\r
+            </ml:Area>\r
+            <!--Optional:-->\r
+            <ml:Departamentos>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:anyType>?</arr:anyType>\r
+            </ml:Departamentos>\r
+            <!--Optional:-->\r
+            <ml:IdDepartamento>?</ml:IdDepartamento>\r
+            <!--Optional:-->\r
+            <ml:Nombre>?</ml:Nombre>\r
+            <!--Optional:-->\r
+            <ml:Producto>\r
+               <!--Optional:-->\r
+               <ml:Departamento/>\r
+               <!--Optional:-->\r
+               <ml:Descripcion>?</ml:Descripcion>\r
+               <!--Optional:-->\r
+               <ml:IdProducto>?</ml:IdProducto>\r
+               <!--Optional:-->\r
+               <ml:Imagen>?</ml:Imagen>\r
+               <!--Optional:-->\r
+               <ml:Nombre>?</ml:Nombre>\r
+               <!--Optional:-->\r
+               <ml:PrecioUnitario>?</ml:PrecioUnitario>\r
+               <!--Optional:-->\r
+               <ml:Productos>\r
+                  <!--Zero or more repetitions:-->\r
+                  <arr:anyType>?</arr:anyType>\r
+               </ml:Productos>\r
+               <!--Optional:-->\r
+               <ml:Proveedor>\r
+                  <!--Optional:-->\r
+                  <ml:IdProveedor>?</ml:IdProveedor>\r
+                  <!--Optional:-->\r
+                  <ml:Nombre>?</ml:Nombre>\r
+                  <!--Optional:-->\r
+                  <ml:Proveedores>\r
+                     <!--Zero or more repetitions:-->\r
+                     <arr:anyType>?</arr:anyType>\r
+                  </ml:Proveedores>\r
+                  <!--Optional:-->\r
+                  <ml:Telefono>?</ml:Telefono>\r
+               </ml:Proveedor>\r
+               <!--Optional:-->\r
+               <ml:Stock>?</ml:Stock>\r
+            </ml:Producto>\r
+         </tem:departamento>\r
+      </tem:GetAll>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/GetAll"/></con:call></con:operation><con:operation id="e6f0d77a-6fce-4683-93e3-ee53a944e527" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/GetById" name="GetById" bindingOperationName="GetById" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eefde15a-81eb-464d-b9b5-b120b29d7ad0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetById>\r
+         <!--Optional:-->\r
+         <tem:idDepartamento>?</tem:idDepartamento>\r
+      </tem:GetById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/GetById"/></con:call></con:operation><con:operation id="1acc2e69-d5e4-463b-a67c-37eed39001e7" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="81e34ae8-5455-4db7-abf5-2408d15185a3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Update>\r
+         <!--Optional:-->\r
+         <tem:departamento>\r
+            <!--Optional:-->\r
+            <ml:Area>\r
+               <!--Optional:-->\r
+               <ml:Areas>\r
+                  <!--Zero or more repetitions:-->\r
+                  <arr:anyType>?</arr:anyType>\r
+               </ml:Areas>\r
+               <!--Optional:-->\r
+               <ml:IdArea>?</ml:IdArea>\r
+               <!--Optional:-->\r
+               <ml:Nombre>?</ml:Nombre>\r
+            </ml:Area>\r
+            <!--Optional:-->\r
+            <ml:Departamentos>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:anyType>?</arr:anyType>\r
+            </ml:Departamentos>\r
+            <!--Optional:-->\r
+            <ml:IdDepartamento>?</ml:IdDepartamento>\r
+            <!--Optional:-->\r
+            <ml:Nombre>?</ml:Nombre>\r
+            <!--Optional:-->\r
+            <ml:Producto>\r
+               <!--Optional:-->\r
+               <ml:Departamento/>\r
+               <!--Optional:-->\r
+               <ml:Descripcion>?</ml:Descripcion>\r
+               <!--Optional:-->\r
+               <ml:IdProducto>?</ml:IdProducto>\r
+               <!--Optional:-->\r
+               <ml:Imagen>?</ml:Imagen>\r
+               <!--Optional:-->\r
+               <ml:Nombre>?</ml:Nombre>\r
+               <!--Optional:-->\r
+               <ml:PrecioUnitario>?</ml:PrecioUnitario>\r
+               <!--Optional:-->\r
+               <ml:Productos>\r
+                  <!--Zero or more repetitions:-->\r
+                  <arr:anyType>?</arr:anyType>\r
+               </ml:Productos>\r
+               <!--Optional:-->\r
+               <ml:Proveedor>\r
+                  <!--Optional:-->\r
+                  <ml:IdProveedor>?</ml:IdProveedor>\r
+                  <!--Optional:-->\r
+                  <ml:Nombre>?</ml:Nombre>\r
+                  <!--Optional:-->\r
+                  <ml:Proveedores>\r
+                     <!--Zero or more repetitions:-->\r
+                     <arr:anyType>?</arr:anyType>\r
+                  </ml:Proveedores>\r
+                  <!--Optional:-->\r
+                  <ml:Telefono>?</ml:Telefono>\r
+               </ml:Proveedor>\r
+               <!--Optional:-->\r
+               <ml:Stock>?</ml:Stock>\r
+            </ml:Producto>\r
+         </tem:departamento>\r
+      </tem:Update>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Update"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

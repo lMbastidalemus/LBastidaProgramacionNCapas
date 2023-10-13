@@ -11,20 +11,11 @@ namespace DLEF
 {
     using System;
     
-    public partial class DepartamentoGetAll_Result
+    public partial class GetByIdDepartamento_Result
     {
         public int IdDepartamento { get; set; }
         public string Nombre { get; set; }
         public int IdArea { get; set; }
         public string NombreArea { get; set; }
-        public int IdProducto { get; set; }
-        public string NombreProducto { get; set; }
-        public decimal PrecioUnitario { get; set; }
-        public int Stock { get; set; }
-        public string Descripcion { get; set; }
-        public string Imagen { get; set; }
-        public int IdProveedor { get; set; }
-        public string Telefono { get; set; }
-        public string NombreProveedor { get; set; }
     }
 }

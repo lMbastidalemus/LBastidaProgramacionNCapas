@@ -57,3 +57,57 @@
       </tem:Delete>
    </soapenv:Body>
 </soapenv:Envelope>
+
+
+---------------------------- UPDATE---------------------------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Update>
+         <!--Optional:-->
+         <tem:departamento>
+            <!--Optional:-->
+            <ml:Area>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               <ml:IdArea>4</ml:IdArea>
+               <!--Optional:-->
+              
+            </ml:Area>
+            <!--Optional:-->
+           
+            <!--Optional:-->
+            <ml:IdDepartamento>37</ml:IdDepartamento>
+            <!--Optional:-->
+            <ml:Nombre>Ropa</ml:Nombre>
+            <!--Optional:-->
+            <ml:Producto>
+               <!--Optional:-->
+               <ml:Departamento/>
+               <!--Optional:-->
+               <ml:Descripcion>Ropa deportiva</ml:Descripcion>
+              
+              
+               <!--Optional:-->
+               <ml:Nombre>Sudadera</ml:Nombre>
+               <!--Optional:-->
+               <ml:PrecioUnitario>300</ml:PrecioUnitario>
+               <!--Optional:-->
+              
+               <!--Optional:-->
+               <ml:Proveedor>
+                  <!--Optional:-->
+                  <ml:IdProveedor>7</ml:IdProveedor>
+                  <!--Optional:-->
+                 
+                  <!--Optional:-->
+                 
+               </ml:Proveedor>
+               <!--Optional:-->
+               <ml:Stock>500</ml:Stock>
+            </ml:Producto>
+         </tem:departamento>
+      </tem:Update>
+   </soapenv:Body>
+</soapenv:Envelope>

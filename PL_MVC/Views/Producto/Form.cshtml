@@ -1,0 +1,139 @@
+﻿@model ML.Producto
+@{
+    ViewBag.Title = "Form";
+}
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Registro Producto</h1>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("FormDepto", "Departamento", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(model => Model.IdProducto);
+    @Html.HiddenFor(model => Model.Imagen); //Te guardar la imagen anterior si es que no la actualizas
+    ML.Producto producto = new ML.Producto();
+    <Form class="form-control">
+        <fieldset>
+            <legend>Datos del departamento</legend>
+            <div class="container row" style="margin-left:10rem">
+                <div class="col-md-4">
+                    @Html.LabelFor(model => model.Nombre)
+                    @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+
+                </div>
+
+                <div class="col-md-4" style="margin-top:3rem">
+                    @Html.LabelFor(model => model.PrecioUnitario)
+                    @Html.TextBoxFor(model => model.PrecioUnitario, new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-4" style="margin-top:3rem">
+                    @Html.LabelFor(model => model.Stock)
+                    @Html.TextBoxFor(model => model.Stock, new { @class = "form-control" })
+                </div>
+
+            </div>
+
+            <div class="container row" style="margin-left:10rem">
+
+
+                <div class="col-md-3" style="margin-top:3rem">
+                    @Html.LabelFor(model => model.Descripcion)
+                    @Html.TextBoxFor(model => model.Descripcion, new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-3" style="margin-top:3rem; margin-left:26.5rem">
+                    @Html.LabelFor(model => model.Proveedor.IdProveedor)
+                    @Html.DropDownListFor(model => model.Proveedor.IdProveedor, new SelectList(Model.Proveedor.Proveedores, "IdProveedor", "Nombre"), "Seleccione un proveedor", new { @class = "form-control" })
+                </div>
+
+               
+                <div class="col-md-3" style="margin-top:3rem; margin-left:26.5rem">
+                    @Html.LabelFor(model => model.Departamento.IdDepartamento)
+                    @Html.DropDownListFor(model => model.Departamento.Area.IdArea, new SelectList(Model.Departamento.Area.Areas, "IdArea", "Nombre"), "Seleccione un departamento", new { @class = "form-control", @id = "ddlDepartamento" })
+                    @*@Html.DropDownListFor(model => model.Departamento.IdDepartamento, new SelectList(Model.Departamento.Departamentos, "IdDepartamento", "Nombre"), "Seleccione un proveedor", new { @class = "form-control", @id = "ddlDepartamento" })*@
+                </div>
+
+            </div>
+
+           
+
+            <div class="container row" style="margin-left:36.5rem">
+                <div class=" col-md-4" style="margin-top:5rem">
+                    @*SI la imagen esta vacia o es nulla se agrega una por default*@
+                    @if (Model.Imagen == "" || Model.Imagen == null)
+                    {
+                        <img id="img" src="https://www.computerhope.com/jargon/g/guest-user.png" width="100" height="100" />
+                    }
+                    else
+                    {
+                        //En  caso contrario se agrega la imagen que el usuario escogio
+                        <img id="img" src="data:image/*;base64,@Model.Imagen" width="100" height="100" style="border-radius:50px" />
+                    }
+
+                    <input id="Imagen" name="imagen" type="file" class="form-control" onchange="ValidarImagen(), VisualizarImagen(this)" />
+
+                </div>
+            </div>
+
+
+            <div class="row" style="margin-left:20rem">
+                <div class="col-md-6" style="margin-top:5rem">
+                    <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk fa-2xl" style="margin-right:2rem"></i>Guardar Departamento</button>
+                </div>
+
+                <div class="col-md-6" style="margin-top:5rem">
+                    <a class="btn btn-danger" href="@Url.Action("GetAll")"><i class="fa-solid fa-circle-arrow-left fa-2xl" style="margin-right:2rem"></i>Regresar</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </Form>
+
+}
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+
+    function ValidarImagen()
+    {
+        var ExtensionesPermitidas = ['jpeg', 'jpg', 'png'];
+        var ExtensionArchivo = document.getElementById('Imagen').value.split('.').pop().toLowerCase();
+
+        var isValida = false;
+        for (var index in ExtensionesPermitidas)
+        {
+            if (ExtensionArchivo === ExtensionesPermitidas[index]) {
+                isValida = true;
+                break;
+            }
+
+        }
+        if (!isValida) {
+            alert('Las extensiones permitidas son: *.' + ExtensionesPermitidas.join(',*.'));
+            $("#Imagen").val("")
+        }
+        return isValida;
+
+    }
+
+    function VisualizarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#img').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>
+
+
+

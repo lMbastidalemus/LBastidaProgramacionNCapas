@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="00e7d6b7-8ff1-4b70-a065-44ecca083972" activeEnvironment="Default" name="ServiceDepartamento" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="aa6de3e6-b8b7-45f2-ae64-b2f81954eb71" wsaVersion="NONE" name="BasicHttpBinding_IServiceDepartamento" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IServiceDepartamento" soapVersion="1_1" anonymous="optional" definition="http://localhost:64876/ServiceDepartamento.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:64876/ServiceDepartamento.svc?wsdl"><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ServiceDepartamento" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<con:soapui-project id="ff59c0e6-496a-4b80-ba78-261c840fb400" activeEnvironment="Default" name="ServiceDepartamento" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1f4259af-405d-489d-946e-6170202b447e" wsaVersion="NONE" name="BasicHttpBinding_IServiceDepartamento" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IServiceDepartamento" soapVersion="1_1" anonymous="optional" definition="http://localhost:64876/ServiceDepartamento.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:64876/ServiceDepartamento.svc?wsdl"><con:part><con:url>http://localhost:64876/ServiceDepartamento.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ServiceDepartamento" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:64876/ServiceDepartamento.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
@@ -22,6 +22,24 @@
   <wsdl:message name="IServiceDepartamento_Delete_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteResponse"/>
   </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetById"/>
+  </wsdl:message>
+  <wsdl:message name="IServiceDepartamento_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdResponse"/>
+  </wsdl:message>
   <wsdl:portType name="IServiceDepartamento">
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/Add" message="tns:IServiceDepartamento_Add_InputMessage"/>
@@ -30,6 +48,18 @@
     <wsdl:operation name="Delete">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/Delete" message="tns:IServiceDepartamento_Delete_InputMessage"/>
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/DeleteResponse" message="tns:IServiceDepartamento_Delete_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/Update" message="tns:IServiceDepartamento_Update_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/UpdateResponse" message="tns:IServiceDepartamento_Update_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/GetAll" message="tns:IServiceDepartamento_GetAll_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/GetAllResponse" message="tns:IServiceDepartamento_GetAll_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceDepartamento/GetById" message="tns:IServiceDepartamento_GetById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceDepartamento/GetByIdResponse" message="tns:IServiceDepartamento_GetById_OutputMessage"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceDepartamento" type="tns:IServiceDepartamento">
@@ -45,6 +75,33 @@
     </wsdl:operation>
     <wsdl:operation name="Delete">
       <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/Delete" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/Update" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/GetAll" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/IServiceDepartamento/GetById" style="document"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -86,6 +143,48 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="DeleteResult" nillable="true" type="q3:Result" xmlns:q3="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="q4:Departamento" xmlns:q4="http://schemas.datacontract.org/2004/07/ML"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateResult" nillable="true" type="q5:Result" xmlns:q5="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="q6:Departamento" xmlns:q6="http://schemas.datacontract.org/2004/07/ML"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllResult" nillable="true" type="q7:Result" xmlns:q7="http://schemas.datacontract.org/2004/07/SLWCF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDepartamento" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetByIdResult" nillable="true" type="q8:Result" xmlns:q8="http://schemas.datacontract.org/2004/07/SLWCF"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -201,55 +300,96 @@
   <xs:attribute name="FactoryType" type="xs:QName"/>
   <xs:attribute name="Id" type="xs:ID"/>
   <xs:attribute name="Ref" type="xs:IDREF"/>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint></con:endpoints><con:operation id="c7e95fb0-a6e8-410d-9950-f8d8ebc9f25b" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c665b3e7-5cd5-4fcd-8237-89acf3eeddec" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <tem:Add>
-         <!--Optional:-->
-         <tem:departamento>
-            <!--Optional:-->
-            <ml:Area>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint></con:endpoints><con:operation id="bb2b68cf-75e5-47ea-b72e-e7911a69a488" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3f7ac152-c60a-425e-88dd-3b1559aabef5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Add>\r
+         <!--Optional:-->\r
+         <tem:departamento>\r
+            <!--Optional:-->\r
+            <ml:Area>\r
+               <!--Optional:-->\r
+             
+               <!--Optional:-->\r
+               <ml:IdArea>7</ml:IdArea>\r
+               <!--Optional:-->\r
               
-               <!--Optional:-->
-               <ml:IdArea>3</ml:IdArea>
-            </ml:Area>
-          
-          
-            <!--Optional:-->
-            <ml:Nombre>Alimentos</ml:Nombre>
-            <!--Optional:-->
-            <ml:Producto>
-               <!--Optional:-->
-               <ml:Departamento/>
-               <!--Optional:-->
-               <ml:Descripcion>Bebidas energeticas</ml:Descripcion>
-            
-              
-               <!--Optional:-->
-               <ml:Nombre>Bebida Gatorade</ml:Nombre>
-               <!--Optional:-->
-               <ml:PrecioUnitario>250</ml:PrecioUnitario>
-               <!--Optional:-->
-              
-               <!--Optional:-->
-               <ml:Proveedor>
-                  <!--Optional:-->
-                  <ml:IdProveedor>5</ml:IdProveedor>
-                  <!--Optional:-->
-               </ml:Proveedor>
-               <!--Optional:-->
-               <ml:Stock>20</ml:Stock>
-            </ml:Producto>
-         </tem:departamento>
-      </tem:Add>
-   </soapenv:Body>
-</soapenv:Envelope>
-]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Add"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="48a396b4-8952-4bff-8456-81e6bb8bb47b" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1f8f34ef-3c8d-4770-a0b3-41b5c5bba67e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+            </ml:Area>\r
+            <!--Optional:-->\r
+         
+            <!--Optional:-->\r
+        
+            <ml:Nombre>Finanzas 2</ml:Nombre>\r
+            <!--Optional:-->\r
+           
+         </tem:departamento>\r
+      </tem:Add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Add"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="81a24cfc-9a79-48b5-acfc-490c791f8446" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6f168278-8cce-4870-9943-fc17bb549be1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <tem:Delete>\r
          <!--Optional:-->\r
-         <tem:idDepartamento>39</tem:idDepartamento>\r
+         <tem:idDepartamento>43</tem:idDepartamento>\r
       </tem:Delete>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Delete"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Delete"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fa59028a-ada0-4271-8c3f-94769539576f" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/GetAll" name="GetAll" bindingOperationName="GetAll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="217428a9-f72d-4c81-a2bd-f6bb8e72b1bc" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetAll>\r
+         <!--Optional:-->\r
+         <tem:departamento>\r
+            <!--Optional:-->\r
+            <ml:Area>\r
+               <!--Optional:-->\r
+             
+               <!--Optional:-->\r
+               <ml:IdArea>0</ml:IdArea>\r
+               <!--Optional:-->\r
+             
+            </ml:Area>\r
+            <!--Optional:-->\r
+           
+         
+            <!--Optional:-->\r
+            <ml:Nombre></ml:Nombre>\r
+            <!--Optional:-->\r
+           
+         </tem:departamento>\r
+      </tem:GetAll>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/GetAll"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b2793958-5c97-4af9-81a7-4e55801a9ca9" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/GetById" name="GetById" bindingOperationName="GetById" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62d6a30e-d220-4eb9-acb0-853ce6774bb2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetById>\r
+         <!--Optional:-->\r
+         <tem:idDepartamento>42</tem:idDepartamento>\r
+      </tem:GetById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/GetById"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="18599669-77ce-4900-9d95-c3cf93302b95" isOneWay="false" action="http://tempuri.org/IServiceDepartamento/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f850070d-ad11-4048-a642-ca4c38be4ff9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:64876/ServiceDepartamento.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ml="http://schemas.datacontract.org/2004/07/ML" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Update>
+         <!--Optional:-->
+         <tem:departamento>
+            <!--Optional:-->
+            <ml:Area>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               <ml:IdArea>6</ml:IdArea>
+               <!--Optional:-->
+              
+            </ml:Area>
+            <!--Optional:-->
+           
+            <!--Optional:-->
+            <ml:IdDepartamento>34</ml:IdDepartamento>
+            <!--Optional:-->
+            <ml:Nombre>Ropaaaaa</ml:Nombre>
+            <!--Optional:-->
+           
+         </tem:departamento>
+      </tem:Update>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IServiceDepartamento/Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

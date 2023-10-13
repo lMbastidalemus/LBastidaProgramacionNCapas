@@ -6,7 +6,8 @@ using System.Runtime.Serialization;
 namespace SLWCF
 {
 
-    [DataContract]
+    [DataContract] //Para serializar/deserializar
+    [KnownType(typeof(int))]
     public class Result
     {
         [DataMember]

@@ -74,11 +74,13 @@
     <Content Include="Service1.svc" />
     <Content Include="ServiceDepartamento.svc" />
     <Content Include="ServiceOperaciones.svc" />
+    <Content Include="ServiceProducto.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IServiceDepartamento.cs" />
     <Compile Include="IServiceOperaciones.cs" />
+    <Compile Include="IServiceProducto.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
@@ -90,6 +92,9 @@
     </Compile>
     <Compile Include="ServiceOperaciones.svc.cs">
       <DependentUpon>ServiceOperaciones.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceProducto.svc.cs">
+      <DependentUpon>ServiceProducto.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +118,9 @@
       <Project>{5d685e12-e88e-45a4-af3c-dfc0b8e6a527}</Project>
       <Name>ML</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
