@@ -1176,8 +1176,12 @@ namespace BL
         //    return result;
 
 
+     
+
+
 
         //}
+
 
         //public static ML.Result GetAllLINQ()
         //{

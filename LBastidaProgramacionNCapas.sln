@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLWCF", "SLWCF\SLWCF.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLWebApi", "SLWebApi\SLWebApi.csproj", "{4C0475FA-8A76-415D-9549-31D73E2E793B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{7E7DB65C-DEEF-4056-86A8-0E24F3E32344}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{4C0475FA-8A76-415D-9549-31D73E2E793B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0475FA-8A76-415D-9549-31D73E2E793B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0475FA-8A76-415D-9549-31D73E2E793B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7DB65C-DEEF-4056-86A8-0E24F3E32344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7DB65C-DEEF-4056-86A8-0E24F3E32344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7DB65C-DEEF-4056-86A8-0E24F3E32344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7DB65C-DEEF-4056-86A8-0E24F3E32344}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
